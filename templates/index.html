@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}GPTモデル切り替え & チャット{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mb-4">GPTモデル切り替え & チャット</h2>
+
+    <div class="card p-3 mb-4">
+        <h4>モデルの選択</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <select id="model-selector" class="form-select">
+                    <option value="gpt-3.5-turbo">gpt-3.5-turbo</option>
+                    <option value="gpt-4">gpt-4</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-primary w-100" onclick="switchModel()">モデルを切り替え</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card p-3">
+        <h4>チャット</h4>
+        <div id="chat-box" class="border p-3 mb-3" style="height: 300px; overflow-y: auto; background-color: #f8f9fa;"></div>
+        <div class="input-group">
+            <input type="text" id="message" class="form-control" placeholder="メッセージを入力..." autofocus>
+            <button class="btn btn-success" onclick="sendMessage()">送信</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
